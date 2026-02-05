@@ -1,0 +1,82 @@
+Lexeme                         Token               
+------                         -----               
+int                            KEYWORD             
+main                           IDENTIFIER          
+(                              PARENTHESES         
+)                              PARENTHESES         
+{                              PARENTHESES         
+int                            KEYWORD             
+sum                            IDENTIFIER          
+=                              OPERATOR 1          
+0                              INTEGER             
+;                              PUNCTUATION         
+for                            KEYWORD             
+(                              PARENTHESES         
+int                            KEYWORD             
+i                              IDENTIFIER          
+=                              OPERATOR 1          
+1                              INTEGER             
+;                              PUNCTUATION         
+i                              IDENTIFIER          
+<=                             OPERATOR 2          
+10                             INTEGER             
+;                              PUNCTUATION         
+i                              IDENTIFIER          
+=                              OPERATOR 1          
+i                              IDENTIFIER          
++                              OPERATOR 1          
+1                              INTEGER             
+)                              PARENTHESES         
+{                              PARENTHESES         
+if                             KEYWORD             
+(                              PARENTHESES         
+i                              IDENTIFIER          
+%                              OPERATOR 1          
+2                              INTEGER             
+==                             OPERATOR 2          
+0                              INTEGER             
+)                              PARENTHESES         
+{                              PARENTHESES         
+sum                            IDENTIFIER          
+=                              OPERATOR 1          
+sum                            IDENTIFIER          
++                              OPERATOR 1          
+i                              IDENTIFIER          
+;                              PUNCTUATION         
+}                              PARENTHESES         
+else                           KEYWORD             
+{                              PARENTHESES         
+sum                            IDENTIFIER          
+=                              OPERATOR 1          
+sum                            IDENTIFIER          
+-                              OPERATOR 1          
+i                              IDENTIFIER          
+;                              PUNCTUATION         
+}                              PARENTHESES         
+}                              PARENTHESES         
+while                          KEYWORD             
+(                              PARENTHESES         
+sum                            IDENTIFIER          
+<                              OPERATOR 1          
+100                            INTEGER             
+)                              PARENTHESES         
+{                              PARENTHESES         
+sum                            IDENTIFIER          
+=                              OPERATOR 1          
+sum                            IDENTIFIER          
++                              OPERATOR 1          
+5                              INTEGER             
+;                              PUNCTUATION         
+cout                           KEYWORD             
+<<                             OPERATOR 2          
+"Current sum: "                STRING              
+<<                             OPERATOR 2          
+sum                            IDENTIFIER          
+<<                             OPERATOR 2          
+endl                           KEYWORD             
+;                              PUNCTUATION         
+}                              PARENTHESES         
+return                         KEYWORD             
+sum                            IDENTIFIER          
+;                              PUNCTUATION         
+}                              PARENTHESES         
