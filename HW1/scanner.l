@@ -76,7 +76,6 @@ PUNC  [;,.:]
 %{
 /* === 2.RULES SECTION === */
 %}
-\" { printf("I FOUND A QUOTE!\n"); }
 
 
 {WS}                 { /* ignore */ }
