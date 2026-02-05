@@ -42,7 +42,7 @@ UNDERSCORE  [_]
 ID  ({LETTER}|{UNDERSCORE})({LETTER}|{DIGIT})*
 
 /* keyword */
-KEYWORD  (while|if|else|for|return|int|char|double|float|void|cout|cin|endl)
+KEYWORD  (while|if|else|for|return|int|char|double|float|void)
 
 /* integer */
 INTEGER  0|[1-9]{DIGIT}*
