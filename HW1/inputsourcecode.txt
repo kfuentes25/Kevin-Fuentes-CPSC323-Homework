@@ -7,7 +7,6 @@ int main() {
             sum = sum - i;
         }
     }
-    /* hello chat im a single line*/
     while (sum < 100) {
         sum = sum + 5;
         cout << "Current sum: " << sum << endl;  // print status

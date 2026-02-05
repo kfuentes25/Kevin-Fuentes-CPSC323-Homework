@@ -30,7 +30,6 @@ void handle_lexical_error(const char *lexeme);
 %}
 
 %x COMMENT
-%option yylineno
 
 /* === 1.DEFINITIONS SECTION === */
 
@@ -58,9 +57,6 @@ STRING \"([^\"\\\n]|\\.)*\"
 /* whitespace */
 WS  [ \t\r\n]+
 
-/* double-line comments */
-DOUBLELINECOMMENT \/\*([^*]|\*+[^*/])*\*+\/
-
 /* single-line comments */
 LINECOMMENT  \/\/[^\n]*
 
@@ -82,12 +78,23 @@ PUNC  [;,.:]
 /* === 2.RULES SECTION === */
 %}
 
-
 {WS}                 { /* ignore */ }
 
 {LINECOMMENT}        { /* ignore */ }
 
-{DOUBLELINECOMMENT}  { /* ignore */ }
+"/*"   { BEGIN(COMMENT); }
+<COMMENT>{
+    "*/"    { BEGIN(INITIAL); } /* 1. Closing tag found. Go back to normal */
+    [^*\n]  { /* 2. Eat a non-star text */}
+    "*"     { /* 3. Eat starts not followed by '/' */}
+    \n      { /* 4. Eat newlines (yylineno handles the count automatically) */}
+    <<EOF>> {
+                /* 5. If it hits EOF while still in comment mode, ERROR!! */
+                handle_lexical_error("Unterminated Comment");
+                yyterminate();
+            }
+            
+}
 
 {KEYWORD}            { fprintf(stdout, "%-30s %-20s\n", yytext, "KEYWORD");
                           if (fout) fprintf(fout, "%-30s %-20s\n", yytext, "KEYWORD");}

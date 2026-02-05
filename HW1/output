@@ -54,29 +54,4 @@ i                              IDENTIFIER
 ;                              PUNCTUATION         
 }                              PARENTHESES         
 }                              PARENTHESES         
-while                          KEYWORD             
-(                              PARENTHESES         
-sum                            IDENTIFIER          
-<                              OPERATOR 1          
-100                            INTEGER             
-)                              PARENTHESES         
-{                              PARENTHESES         
-sum                            IDENTIFIER          
-=                              OPERATOR 1          
-sum                            IDENTIFIER          
-+                              OPERATOR 1          
-5                              INTEGER             
-;                              PUNCTUATION         
-cout                           IDENTIFIER          
-<<                             OPERATOR 2          
-"Current sum: "                STRING              
-<<                             OPERATOR 2          
-sum                            IDENTIFIER          
-<<                             OPERATOR 2          
-endl                           IDENTIFIER          
-;                              PUNCTUATION         
-}                              PARENTHESES         
-return                         KEYWORD             
-sum                            IDENTIFIER          
-;                              PUNCTUATION         
-}                              PARENTHESES         
+Unterminated Comment           LEXICAL ERROR       
