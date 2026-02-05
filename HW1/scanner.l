@@ -47,6 +47,11 @@ KEYWORD  (while|if|else|for|return|int|char|double|float|void)
 /* integer */
 INTEGER  0|[1-9]{DIGIT}*
 
+/*Bad integer: This integer is one that starts with a '0'
+  but has more digits and is not a decimal
+*/
+BAD_INTEGER 0{DIGIT}+
+
 /* string */
 STRING \"([^\"\\\n]|\\.)*\"
 
@@ -86,6 +91,8 @@ PUNC  [;,.:]
 
 {KEYWORD}            { fprintf(stdout, "%-30s %-20s\n", yytext, "KEYWORD");
                           if (fout) fprintf(fout, "%-30s %-20s\n", yytext, "KEYWORD");}
+
+{BAD_INTEGER}        { handle_lexical_error(yytext); }
 
 {INTEGER}            { fprintf(stdout, "%-30s %-20s\n", yytext, "INTEGER");
                           if (fout) fprintf(fout, "%-30s %-20s\n", yytext, "INTEGER");}

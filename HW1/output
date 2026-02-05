@@ -67,13 +67,13 @@ sum                            IDENTIFIER
 +                              OPERATOR 1          
 5                              INTEGER             
 ;                              PUNCTUATION         
-cout                           KEYWORD             
+cout                           IDENTIFIER          
 <<                             OPERATOR 2          
 "Current sum: "                STRING              
 <<                             OPERATOR 2          
 sum                            IDENTIFIER          
 <<                             OPERATOR 2          
-endl                           KEYWORD             
+endl                           IDENTIFIER          
 ;                              PUNCTUATION         
 }                              PARENTHESES         
 return                         KEYWORD             
